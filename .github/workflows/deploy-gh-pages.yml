@@ -30,7 +30,7 @@ jobs:
 
       - name: deploy with gh-pages
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/gabrielogregorio/microfrontend-base.git
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/gabrielogregorio/mfe-eris.git
           npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
