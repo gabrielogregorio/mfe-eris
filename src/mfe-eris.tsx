@@ -8,9 +8,9 @@ const lifecycles = singleSpaReact({
   ReactDOM,
   rootComponent: Root,
   errorBoundary(err, info, props) {
-    // Customize the root error boundary for your microfrontend here.
-    return null;
+    return <div>Error: {err.message}</div>;
   },
+  domElementGetter: () => document.getElementById("main-content"),
 });
 
 export const { bootstrap, mount, unmount } = lifecycles;
