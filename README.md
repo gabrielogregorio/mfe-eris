@@ -1,3 +1,5 @@
+# single-spa mfe from root app
+
 ```
-npm start -- --port 8500
+npm run dev
 ```
