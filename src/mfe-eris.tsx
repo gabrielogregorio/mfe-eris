@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
 import Root from "./root.component";
+import "./tailwind.css";
 
-const lifecycles = singleSpaReact({
+const lifeCycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Root,
-  errorBoundary(err, info, props) {
-    return <div>Error: {err.message}</div>;
+  rootComponent: (props: any) => {
+    return <Root />;
   },
-  domElementGetter: () => document.getElementById("main-content"),
+  errorBoundary() {
+    return null;
+  },
 });
 
-export const { bootstrap, mount, unmount } = lifecycles;
+export const { bootstrap, mount, unmount } = lifeCycles;
